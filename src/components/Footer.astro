@@ -1,0 +1,52 @@
+---
+import "../global_css/style.css";
+---
+<footer>
+    <p>© COPENHAGEN LIGHT FESTIVAL |</p>
+    <a href="#">info@copenhagenlightfestival.org</a>
+     <a href="#">Tlf. +45 25 55 66 04</a>
+
+     <div>
+        <img src="./icons/facebook.png" alt="Facebook">
+        <img src="./icons/instagram.png" alt="Instagram">
+     </div>
+</footer>
+
+
+<style>
+  footer {
+    display: flex;
+    gap: var(--space-md);
+    flex-wrap: wrap;
+    position: bottom;
+    background: var( --line-banner);
+    color: var(--text-navy);
+    border-top: 1px solid #282828;
+    padding: 11px 24px 7px 15px;
+  }
+
+  .footer-title {
+    font-size: var(--font-size-tiny);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  a{
+    color: var(--text-navy);
+  }
+
+div{
+display: flex;
+justify-content: space-between;
+gap: 2rem;
+  }
+
+  div img{
+  width: 40%;
+  height: auto;
+  margin-inline: auto;
+  margin-top: 15%;
+  margin-bottom: 15%;
+  }
+
+</style>
