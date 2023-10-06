@@ -1,8 +1,5 @@
 :root {
     /* Farver */
-    --brand-color: #1ed760;
-    --brand-color-highlight: #1fdf64;
-
     --surface-default: #121212;
     --surface-light: #181818;
     --surface-light-hover: #282828;
@@ -45,4 +42,9 @@
     --shadow-default: 0 8px 24px hsl(0 0% 0% / 50%);
     --shadow-medium: 0 8px 8px rgb(0 0 0 / 30%);
     --shadow-small: 0 2px 4px 0 hsl(0 0% 0% / 20%);
+}
+
+body {
+    background-image: url(/img/background.png);
+    background-size: cover;
 }
