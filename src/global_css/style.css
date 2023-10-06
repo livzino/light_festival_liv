@@ -27,15 +27,24 @@
 
     --button: #ff0092;
 
-    --box_line: #fee1bb;
+    --link: #ff0092;
+
+    --hover: #ff0092;
+
+    --line: #fee1bb;
+
+    --box: linear-gradient(#fee1bb, rgba(0, 0, 255, 0));
 
     /* Typografi */
-    --font-size-h2: 1.5rem;
+    /* Størrelser */
+    --font-size-h1: 7.594rem;
     --font-size-base: 1rem;
+    --font-size-h3: 2rem;
     --font-size-small: 0.875rem;
     --font-size-tiny: 0.75rem;
     --font-size-legal: 0.6875rem;
     --font-size-button: 2.5rem;
+    /* Fonte */
     --font-header: 'chicle', Arial, sans-serif;
     --font-title: 'jua', Arial, sans-serif;
     --font-body: Arial, sans-serif;
@@ -52,13 +61,16 @@
     --space-xxxl: 3rem;
 
     /* Border radius */
+    --border-radius-corner: 50px;
     --border-radius-round: 1000px;
-    --border-radius-lg: 0.5rem;
-    --border-radius-medium: 0.375rem;
+    --border-radius-textbox: 25px;
     --border-radius-small: 0.25rem;
 
     /* Padding */
     --padding-button: 10px 50px;
+
+    /* border */
+    --border-img: 5px solid #ff0092;
 
     /* Box shadow */
     --shadow-default: -1px 3px 30px -1px #ff0092;
@@ -70,10 +82,11 @@ body {
     background-image: url(/img/background_samlet.png);
     background-size: cover;
     font-family: var(--font-header);
+    color: var(--text-beige);
 }
 
 
-a {
+.button {
     background-color: var(--button);
     padding: var(--padding-button);
     border-radius: var(--border-radius-round);
@@ -83,14 +96,73 @@ a {
     box-shadow: var(--shadow-default);
 }
 
-a:hover {
+.button:hover {
     box-shadow: var(--shadow-hover);
+}
+
+h1 {
+    font-size: var(--font-size-h1);
 }
 
 h3 {
     font-family: var(--font-title);
+    font-size: var(--font-size-h3);
 }
 
 p {
     font-family: var(--font-body);
+    font-size: var(--font-size-base);
+}
+
+img {
+    border-radius: var(--border-radius-corner);
+}
+
+.img2 {
+    border-radius: var(--border-radius-round);
+    border: var(--border-img);
+    box-shadow: var(--shadow-default);
+}
+
+.img2:hover {
+    box-shadow: var(--shadow-hover);
+}
+
+hr {
+    color: var(--line);
+    width: 50%;
+}
+
+div {
+    background-image: var(--box);
+    border-radius: var(--border-radius-textbox);
+    width: 448px;
+    padding: 10px;
+    font-size: 16px;
+
+}
+
+.box_text {
+    color: var(--text-navy);
+}
+
+.link {
+    text-decoration: none;
+    color: var(--link);
+    font-size: var(--font-size-base);
+}
+
+.link:hover {
+    text-decoration: underline;
+}
+
+
+a {
+    text-decoration: none;
+    color: var(--text-beige);
+    font-size: var(--font-size-base);
+}
+
+a:hover {
+    color: var(--hover);
 }
