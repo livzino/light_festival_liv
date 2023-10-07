@@ -39,7 +39,7 @@
         --font-size-h1: 8rem;
         --font-size-h3: 2rem;
         --font-size-base: 1rem;
-        --font-size-banner: 5.063rem;
+        --font-size-banner: 2rem;
         --font-size-button: 2.5rem;
         /* Fonte */
         --font-chicle: 'chicle', Arial, sans-serif;
@@ -137,14 +137,6 @@
         width: 50%;
     }
 
-    div {
-        background-image: var(--box);
-        border-radius: var(--border-radius-textbox);
-        width: 448px;
-        padding: 10px;
-        font-size: 16px;
-
-    }
 
     .box_text {
         color: var(--text-navy);
@@ -159,36 +151,4 @@
 
     .link:hover {
         text-decoration: underline;
-    }
-
-
-
-    .banner {
-        position: relative;
-        width: 50vw;
-        max-width: 100%;
-        height: 70px;
-        overflow-x: hidden;
-        background-color: var(--line-banner);
-        color: var(--text-navy);
-        font-family: var(--font-chicle);
-        font-size: var(--font-size-banner);
-        margin-top: 2.5%;
-    }
-
-    .track {
-        position: absolute;
-        white-space: nowrap;
-        will-change: transform;
-        animation: banner 5s linear infinite;
-    }
-
-    @keyframes banner {
-        from {
-            transform: translateX(0);
-        }
-
-        to {
-            transform: translateX(-50%);
-        }
     }
