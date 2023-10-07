@@ -110,21 +110,6 @@
     }
 
 
-    .button {
-        background-color: var(--button);
-        padding: var(--padding-button);
-        border-radius: var(--border-radius-round);
-        font-family: var(--font-chicle);
-        font-size: var(--font-size-button);
-        color: var(--text-beige);
-        text-decoration: none;
-        box-shadow: var(--shadow-default);
-    }
-
-    .button:hover {
-        box-shadow: var(--shadow-hover);
-    }
-
     h1 {
         font-family: var(--font-chicle);
         font-size: var(--font-size-h1);
