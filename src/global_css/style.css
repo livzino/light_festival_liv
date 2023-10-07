@@ -132,16 +132,6 @@
         border-radius: var(--border-radius-corner);
     }
 
-    .img2 {
-        border-radius: var(--border-radius-round);
-        border: var(--border-img);
-        box-shadow: var(--shadow-default);
-    }
-
-    .img2:hover {
-        box-shadow: var(--shadow-hover);
-    }
-
     hr {
         color: var(--line);
         width: 50%;
@@ -171,16 +161,7 @@
         text-decoration: underline;
     }
 
-    .nav {
-        text-decoration: none;
-        color: var(--text-beige);
-        font-size: var(--font-size-base);
-        font-family: var(--font-chicle);
-    }
 
-    .nav:hover {
-        color: var(--hover);
-    }
 
     .banner {
         position: relative;
