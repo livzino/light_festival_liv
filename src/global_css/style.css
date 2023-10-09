@@ -115,6 +115,10 @@
         font-size: var(--font-size-h1);
     }
 
+    h2 {
+        font-family: var(--font-chicle);
+    }
+
     h3 {
         font-family: var(--font-jua);
         font-size: var(--font-size-h3);
