@@ -1,56 +1,59 @@
 ---
 export async function getStaticPaths() {
-  const data = await fetch("https://sxdcfbtekrznubmimpmp.supabase.co/rest/v1/cphlf2",{
-		method:"GET",
-	headers: {
-		apikey:
-		"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InN4ZGNmYnRla3J6bnVibWltcG1wIiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTU3MjM3OTgsImV4cCI6MjAxMTI5OTc5OH0.SWGKNpOWij6-SQRCZs_H00PzCW70M2cG6_IYIIAjI1k"
-	},
-}).then(response => response.json());
+  const data = await fetch("https://sxdcfbtekrznubmimpmp.supabase.co/rest/v1/cphlf2", {
+    method: "GET",
+    headers: {
+      apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InN4ZGNmYnRla3J6bnVibWltcG1wIiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTU3MjM3OTgsImV4cCI6MjAxMTI5OTc5OH0.SWGKNpOWij6-SQRCZs_H00PzCW70M2cG6_IYIIAjI1k",
+    },
+  }).then((response) => response.json());
 
   return data.map((artwork) => {
     return {
       params: { slug: artwork.slug },
-      props: { myData:artwork },
+      props: { myData: artwork },
     };
   });
 }
 
-const {myData}=Astro.props
+const { myData } = Astro.props;
+import "../../global_css/style.css";
+import Nav from "../../components/Nav.astro";
+import Footer from "../../components/Footer.astro";
 ---
+
 <html lang="da">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{myData.slug}</title>
-	</head>
-	<body>
-		
-		<h1>{myData.titel}</h1>
-		<article class="info1">
-		<img class="img_single" src={myData.img} alt="#">
-		<p class="who">{myData.hvem}</p>
-		<p class="where">{myData.hvor}</p>
-		<p class="bio">{myData.bio}</article>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
 
-		<article class="info2">
-			<p class="link_titel">links</p>
-			<a class="link" href={myData.link}>klik</a>
-			<a class="social_medie" href={myData.socialemedier}>klak</a>
-			<p class="tak_titel">Thanks to</p>
-			<p class="tak_tekst">{myData.tak}</p>
-		</article>
-	</body>
+    <title>{myData.slug}</title>
+  </head>
+  <body>
+    <h1>{myData.titel}</h1>
+    <article class="info1">
+      <img class="img_single" src={myData.img} alt="#" />
+      <p class="who">{myData.hvem}</p>
+      <p class="where">{myData.hvor}</p>
+      <p class="bio">{myData.bio}</p>
+
+      <article class="info2">
+        <p class="link_titel">links</p>
+        <a class="link" href={myData.link}>klik</a>
+        <a class="social_medie" href={myData.socialemedier}>klak</a>
+        <p class="tak_titel">Thanks to</p>
+        <p class="tak_tekst">{myData.tak}</p>
+      </article>
+    </article>
+  </body>
+
+  <style>
+    .info1 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+  </style>
 </html>
-
-<style>
-	.info1 {
-		display: grid;
-		grid-template-columns: 1fr 1fr;
-	}
-</style>
-
-
-
