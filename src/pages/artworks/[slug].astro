@@ -18,4 +18,39 @@ export async function getStaticPaths() {
 
 const {myData}=Astro.props
 ---
-<h1>{myData.bio}</h1>
+<html lang="da">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{myData.slug}</title>
+	</head>
+	<body>
+		
+		<h1>{myData.titel}</h1>
+		<article class="info1">
+		<img class="img_single" src={myData.img} alt="#">
+		<p class="who">{myData.hvem}</p>
+		<p class="where">{myData.hvor}</p>
+		<p class="bio">{myData.bio}</article>
+
+		<article class="info2">
+			<p class="link_titel">links</p>
+			<a class="link" href={myData.link}>klik</a>
+			<a class="social_medie" href={myData.socialemedier}>klak</a>
+			<p class="tak_titel">Thanks to</p>
+			<p class="tak_tekst">{myData.tak}</p>
+		</article>
+	</body>
+</html>
+
+<style>
+	.info1 {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+	}
+</style>
+
+
+
