@@ -1,0 +1,69 @@
+<div class="wrapper">
+  <div class="fold-out-box">
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste similique dolorem non nihil quam eveniet, assumenda quidem consequuntur, maiores dolores dolore animi fugiat quos! Accusamus nihil eligendi animi sed repellat? Laudantium tempore nisi saepe a nesciunt distinctio consequatur iste dignissimos amet. Veniam tenetur qui delectus consectetur, voluptatibus illum nulla quae tempore neque quisquam porro saepe atque, dolor sed pariatur molestiae. Quae sed quisquam, optio, animi fugit dolores, consequatur cupiditate dicta obcaecati aut voluptas provident eligendi? Nihil, error earum tempore quas sint dolore, maxime quidem quibusdam ad voluptate debitis, rem quae?</p>
+    <button class="read-more-button">Read More</button>
+  </div>
+
+  <div class="fold-out-box">
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti qui sint consequuntur sequi perferendis laborum temporibus cum! Ad cum odit quaerat optio enim modi labore, tempora earum dolores. Ut, accusantium. Harum nisi quam, asperiores obcaecati aperiam a culpa beatae excepturi nostrum. Ipsam laboriosam vel ducimus maiores alias corrupti necessitatibus, impedit ex voluptatibus amet inventore reiciendis nobis nemo quisquam cupiditate ratione. Praesentium at dicta totam tempore amet. Animi distinctio deleniti maiores quaerat hic provident commodi, sed labore exercitationem saepe perferendis veniam facere in repudiandae eum nam deserunt pariatur. Quas, possimus necessitatibus!</p>
+    <button class="read-more-button">Read More</button>
+  </div>
+</div>
+
+<style>
+  .fold-out-box {
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+    justify-content: space-between; /* Vertically align children at the top and bottom */
+    max-height: 200px; /* Adjust the initial max-height as needed */
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+    width: 90%;
+    background-color: #3498db;
+    border: 2px solid #000000ed;
+    border-radius: 20px;
+    margin: 10px;
+    margin-bottom: 30px;
+    padding: 10px;
+    color: #fff;
+    font-size: 18px;
+    position: relative;
+  }
+
+  .read-more-button {
+    align-self: center;
+    cursor: pointer;
+    margin-top: auto;
+  }
+
+  .fold-out-box::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px; /* Adjust the height of the fade effect */
+    background: linear-gradient(to bottom, rgba(19, 20, 19, 0), rgb(37, 38, 39)); /* Add the gradient background */
+  }
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const buttons = document.querySelectorAll(".read-more-button");
+
+    buttons.forEach(function (button) {
+      button.addEventListener("click", function () {
+        const box = button.parentElement;
+
+        if (box.style.maxHeight) {
+          box.style.maxHeight = ""; // Remove the 'maxHeight' property to collapse the box
+          button.textContent = "Read More";
+        } else {
+          box.style.maxHeight = box.scrollHeight + "px"; // Expand the box to fit its content
+          button.textContent = "Read Less";
+        }
+      });
+    });
+  });
+</script>
