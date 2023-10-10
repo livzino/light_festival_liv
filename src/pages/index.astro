@@ -58,10 +58,10 @@ import ImgButton from "../components/ImgButton.astro";
       </div>
       <h5>Partner</h5>
       <div class="gridimg">
-        <img src="img/logo1.png" alt="logo1" />
-        <div class="nordbro"><img src="img/logo2.png" alt="logo2" /></div>
-        <img src="img/logo3.png" alt="logo3" />
-        <img src="img/logo4.png" alt="logo4" />
+        <img src="img/logo1.png" alt="logo1" class="glypto" />
+        <img src="img/logo2.png" alt="logo2" class="nordbro" />
+        <img src="img/logo3.png" alt="logo3" class="ano" />
+        <img src="img/logo4.png" alt="logo4" class="kbh" />
       </div>
     </main>
 
@@ -103,6 +103,10 @@ import ImgButton from "../components/ImgButton.astro";
       .gridimg {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
+      }
+      .nordbro {
+        width: 300px;
+        height: auto;
       }
 
       /* var(--text-navy) 
