@@ -14,7 +14,7 @@ const data = await fetch(
 <section class="timeline">
   <ul>
     <li>
-      <h2>VÆRKER</h2>
+      <h3>VÆRKER</h3>
     </li>
     {
       data
@@ -22,13 +22,13 @@ const data = await fetch(
         .map((myData) => (
           <li>
             <div>
-              <img src={myData.img} alt="" />
+              <img src={myData.img} alt={myData.titel} />
             </div>
           </li>
         ))
     }
     <li>
-      <h2>POP-UP EVENTS</h2>
+      <h3>POP-UP EVENTS</h3>
     </li>
     {
       data
@@ -42,7 +42,7 @@ const data = await fetch(
         ))
     }
     <li>
-      <h2>EXTRA LIGHT EXPERIENCES</h2>
+      <h3>EXTRA LIGHT EXPERIENCES</h3>
     </li>
     {
       data
@@ -59,9 +59,18 @@ const data = await fetch(
 </section>
 
 <style>
+  h3 {
+    white-space: nowrap;
+    margin-left: 32px;
+  }
+
+  img {
+    width: 400px;
+    height: 300px;
+  }
+
   /* TIMELINE
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
-
   *,
   *::before,
   *::after {
@@ -144,11 +153,6 @@ const data = await fetch(
     margin-bottom: 8px;
   }
 
-  h2 {
-    white-space: nowrap;
-    margin-left: 32px;
-    font-size: 4rem;
-  }
   /* EFFECTS
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
