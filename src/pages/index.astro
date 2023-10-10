@@ -15,6 +15,8 @@ console.log(data);
 import "../global_css/style.css";
 import Nav from "../components/Nav.astro";
 import Footer from "../components/Footer.astro";
+import Banner from "../components/Banner.astro";
+import ImgButton from "../components/ImgButton.astro";
 ---
 
 <html lang="da">
@@ -30,8 +32,73 @@ import Footer from "../components/Footer.astro";
   </head>
   <Nav />
   <body>
-    <h1>Forside</h1>
-    <a href=""></a>
-    <Footer />
+    <main>
+      <h1>Forside</h1>
+      <a href=""></a>
+      <Banner />
+      <div class="gridbutton">
+        <div class="firstbutton">
+          <ImgButton />
+        </div>
+        <ImgButton />
+        <ImgButton />
+      </div>
+      <hr />
+      <div class="gridabout">
+        <div>
+          <h4>What is Copenhagen light Festival?</h4>
+          <div class="paddingboks">
+            <p class="pnavy">Copenhagen Light Festival is an annual light festival that transforms the quiet and cold winter darkness into a unique celebration of light art, lighting design and illumination in the center of Copenhagen. In three weeks of February the festival presents a wide range of light based works – such as sculpture, installation, projection mapping, event and illumination created by both established and upcoming light artists, lighting designers, students and organizations.</p>
+          </div>
+        </div>
+        <div>
+          <h4>Substainbility</h4>
+          <div class="paddingboks">
+            <p class="pnavy">Copenhagen Light Festival is an annual light festival that transforms the quiet and cold winter darkness into a unique celebration of light art, lighting design and illumination in the center of Copenhagen. In three weeks of February the festival presents a wide range of light based works – such as sculpture, installation, projection mapping, event and illumination created by both established and upcoming light artists, lighting designers, students and organizations.</p>
+          </div>
+        </div>
+      </div>
+      <h5>Partner</h5>
+    </main>
   </body>
+
+  <style>
+    .gridbutton {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      margin-left: 130px;
+      margin-top: 100px;
+    }
+    hr {
+      width: 1250px;
+      margin: 100px;
+    }
+    .gridabout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+    .paddingboks {
+      background-color: var(--text-beige);
+      padding: 30px;
+      margin: 80px;
+      border-radius: 30px;
+      margin-top: 20px;
+    }
+    h4 {
+      text-align: center;
+      font-size: var(--font-size-banner);
+    }
+    .pnavy {
+      color: var(--text-navy);
+    }
+    h5 {
+      text-align: center;
+      font-size: var(--font-size-banner);
+      margin-bottom: 100px;
+      margin-top: 20px;
+    }
+    /* var(--text-navy) 
+    var(--text-beige)
+    */
+  </style>
 </html>
