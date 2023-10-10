@@ -34,28 +34,31 @@ const { myData } = Astro.props;
   </head>
   <Nav />
   <body>
-    <h1>{myData.titel}</h1>
-    <div class="grid">
-      <img class="img_single" src={myData.img} alt="#" />
-      <article class="info1">
-        <h4 class="overskrift_info1 who_overskrift info_flex">WHO:</h4>
-        <p class="who overskrift info_flex">{myData.hvem}</p>
-        <h4 class="overskrift_info1 info_flex">WHERE:</h4>
-        <p class="where overskrift info_flex">{myData.hvor}</p>
-        <h4 class="overskrift about info_flex"><strong>ABOUT:</strong></h4>
-        <p class="bio info_flex">{myData.bio}</p>
-      </article>
-      <article class="info2">
-        <h4 class="link_titel info2"><strong>LINKS:</strong></h4>
-        <a class="link info2" href={myData.link}>Website</a>
-        <br />
-        <a class="social_medie link info2" href={myData.socialemedier}>Instagram</a>
-        <h4 class="tak_titel info2"><strong>THANKS TO:</strong></h4>
-        <p class="tak_tekst info2">{myData.tak}</p>
-      </article>
-    </div>
+    <main>
+      <h1>{myData.titel}</h1>
+      <div class="grid">
+        <img class="img_single" src={myData.img} alt="#" />
+        <article class="info1">
+          <h4 class="overskrift_info1 who_overskrift info_flex">WHO:</h4>
+          <p class="who overskrift info_flex">{myData.hvem}</p>
+          <h4 class="overskrift_info1 info_flex">WHERE:</h4>
+          <p class="where overskrift info_flex">{myData.hvor}</p>
+          <h4 class="overskrift about info_flex"><strong>ABOUT:</strong></h4>
+          <p class="bio info_flex">{myData.bio}</p>
+        </article>
+        <article class="info2">
+          <h4 class="link_titel info2"><strong>LINKS:</strong></h4>
+          <a class="link info2" href={myData.link}>Website</a>
+          <br />
+          <a class="social_medie link info2" href={myData.socialemedier}>Instagram</a>
+          <h4 class="tak_titel info2"><strong>THANKS TO:</strong></h4>
+          <p class="tak_tekst info2">{myData.tak}</p>
+        </article>
+      </div>
+    </main>
+    <Footer />
   </body>
-  <Footer />
+
   <!-- //*MANGLER FOOTER -->
 
   <style>
@@ -64,7 +67,7 @@ const { myData } = Astro.props;
     h1 {
       text-align: center;
     }
-    body {
+    main {
       padding: 50px;
     }
     h4 {
