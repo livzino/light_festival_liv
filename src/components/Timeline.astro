@@ -9,12 +9,25 @@ const data = await fetch(
     },
   }
 ).then((res) => res.json());
+
+import Button from "../components/Button.astro";
 ---
-<section class="timeline">
-  <ul>
+<section class="button-container">
+
+    <a href="#id1">VÆRKER</a>
+    <a href="#id2">POP-UP</a>
+    <a href="#id3">EXTRA</a>
+
+</section>
+
+
+<div class="timeline">
+   <ul>
+    <section id="id1">
     <li>
       <h3>VÆRKER</h3>
     </li>
+    </section>
     {
       data
         .filter((myData) => myData.event === "Værker")
@@ -29,9 +42,11 @@ const data = await fetch(
           </li>
         ))
     }
+    <section id="id2">
     <li>
       <h3>POP-UP EVENTS</h3>
     </li>
+    </section>
     {
       data
         .filter((myData) => myData.event === "Popup")
@@ -46,9 +61,11 @@ const data = await fetch(
           </li>
         ))
     }
-    <li>
-      <h3>EXTRA LIGHT EXPERIENCES</h3>
+    <section id="id3">
+    <li >
+      <h3>EXTRA</h3>
     </li>
+    </section>
     {
       data
         .filter((myData) => myData.event === "Extralight")
@@ -64,7 +81,7 @@ const data = await fetch(
         ))
     }
   </ul>
-</section>
+</div>
 
 <style>
   h3 {
@@ -117,6 +134,15 @@ display: block;
   box-shadow: var(--shadow-hover);
 }
 
+.timeline ul li:nth-child(odd) div {
+  left: 45px; /* Adjust this value as needed for layout */
+}
+
+.timeline ul li:nth-child(even) div {
+  left: -439px; /* Adjust this value as needed for layout */
+}
+
+
   /* TIMELINE
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
   *,
@@ -133,6 +159,7 @@ display: block;
   }
 
   .timeline {
+  margin-top: 80px;
   margin-bottom: 80px;}
 
   .timeline ul {
@@ -323,33 +350,73 @@ display: block;
       transform: translateX(-50%) scale(1);
     }
   }
+
+  /* Button
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+ .button-container a{
+    background-color: var(--button);
+    padding: var(--padding-button);
+    border-radius: var(--border-radius-round);
+    font-family: var(--font-chicle);
+    font-size: var(--font-size-button);
+    color: var(--text-beige);
+    text-decoration: none;
+    box-shadow: var(--shadow-default);
+    border: none;
+    display: block;
+    margin: 0 auto;
+    margin-top: 30px;
+  }
+  .button-container a:hover {
+    box-shadow: var(--shadow-hover);
+  }
+.button-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 150px;
+  }
+
+  @media screen and (min-width: 769px) {
+    .button-container {
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+
 </style>
 
 <script>
-  (function () {
-    "use strict";
 
-    // define variables
-    var items = document.querySelectorAll(".timeline li");
 
-    // check if an element is in viewport
-    // http://stackoverflow.com/questions/123999/how-to-tell-if-a-dom-element-is-visible-in-the-current-viewport
-    function isElementInViewport(el) {
-      var rect = el.getBoundingClientRect();
-      return rect.top >= 0 && rect.left >= 0 && rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) && rect.right <= (window.innerWidth || document.documentElement.clientWidth);
-    }
 
-    function callbackFunc() {
-      for (var i = 0; i < items.length; i++) {
-        if (isElementInViewport(items[i])) {
-          items[i].classList.add("in-view");
+      /* Timeline
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+    (function () {
+      "use strict";
+
+      // define variables
+      var items = document.querySelectorAll(".timeline li");
+
+      // check if an element is in viewport
+      function isElementInViewport(el) {
+        var rect = el.getBoundingClientRect();
+        return rect.top >= 0 && rect.left >= 0 && rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) && rect.right <= (window.innerWidth || document.documentElement.clientWidth);
+      }
+
+      function callbackFunc() {
+        for (var i = 0; i < items.length; i++) {
+          if (isElementInViewport(items[i])) {
+            items[i].classList.add("in-view");
+          }
         }
       }
-    }
 
-    // listen for events
-    window.addEventListener("load", callbackFunc);
-    window.addEventListener("resize", callbackFunc);
-    window.addEventListener("scroll", callbackFunc);
-  })();
+      // listen for events
+      window.addEventListener("load", callbackFunc);
+      window.addEventListener("resize", callbackFunc);
+      window.addEventListener("scroll", callbackFunc);
+    })();
 </script>

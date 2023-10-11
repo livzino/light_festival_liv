@@ -10,10 +10,10 @@ const data = await fetch(
   }
 ).then((res) => res.json());
 
-import Timeline from "../components/Timeline.astro";
 import "../global_css/style.css";
 import Nav from "../components/Nav.astro";
 import Footer from "../components/Footer.astro";
+import Timeline from "../components/Timeline.astro";
 ---
 
 <html lang="da">
@@ -28,15 +28,10 @@ import Footer from "../components/Footer.astro";
     <title>Forside</title>
   </head>
   <body>
-    <h1>Forside</h1>
-    <a href=""></a>
-
+    <Nav />
     <section class="artworks">
-      {
-        data.map((artwork) => {
-          return <Timeline data={artwork} />;
-        })
-      }
+      <Timeline />
     </section>
+    <Footer />
   </body>
 </html>

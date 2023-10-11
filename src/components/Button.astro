@@ -1,13 +1,13 @@
 ---
-import "../global_css/style.css";
+
 ---
 
-<button>
+<a class="custom-button">
   <slot />
-</button>
+</a>
 
 <style>
-  button {
+  a.custom-button {
     background-color: var(--button);
     padding: var(--padding-button);
     border-radius: var(--border-radius-round);
@@ -17,10 +17,11 @@ import "../global_css/style.css";
     text-decoration: none;
     box-shadow: var(--shadow-default);
     border: none;
-    margin-right: 100px;
+    display: block;
+    margin: 0 auto;
+    margin-top: 30px;
   }
-
-  button:hover {
+  a.custom-button:hover {
     box-shadow: var(--shadow-hover);
   }
 </style>
