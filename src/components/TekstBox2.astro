@@ -1,13 +1,13 @@
 <article>
   <slot name="h3" slot="h3" />
-  <div class="card" id="card">
-    <input id="ch" type="checkbox" />
+  <div class="card" id="card2">
+    <input id="chh" type="checkbox" />
     <slot name="p1" slot="p1" />
     <div class="content">
       <slot name="p2" slot="p2" />
-      <label for="ch" class="show-less-label">Show less</label>
+      <label for="chh" class="show-less-label">Show less</label>
     </div>
-    <label for="ch" class="read-more-label">Read more</label>
+    <label for="chh" class="read-more-label">Read more</label>
   </div>
 </article>
 <style>
@@ -20,18 +20,18 @@
     margin-top: 20px;
   }
 
-  #ch {
+  #chh {
     display: none;
   }
 
-  #card.show-content {
+  #card2.show-content {
     background-color: #fee1bb;
   }
-  #card.show-content .content {
+  #card2.show-content .content {
     display: block;
   }
 
-  #card.show-content label[for="ch"] {
+  #card2.show-content label[for="chh"] {
     display: inline-block;
   }
 
