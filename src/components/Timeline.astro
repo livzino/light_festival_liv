@@ -21,12 +21,12 @@ const data = await fetch(
         .filter((myData) => myData.event === "Værker")
         .map((myData) => (
           <li>
-            <div class="container">
+           <a href={"/artworks/" + myData.slug}>
+           <div class="container">
            <img src={myData.img} alt="" class="image" />
-           <a class="text" href={"/artworks/" + myData.slug}>
-          {myData.titel}
-          </a>
-         </div>
+           <p class="text">{myData.titel}</p>
+           </div>
+           </a>
           </li>
         ))
     }
@@ -38,12 +38,12 @@ const data = await fetch(
         .filter((myData) => myData.event === "Popup")
         .map((myData) => (
           <li>
-              <div class="container">
+            <a href={"/artworks/" + myData.slug}>
+           <div class="container">
            <img src={myData.img} alt="" class="image" />
-           <a class="text" href={"/artworks/" + myData.slug}>
-          {myData.titel}
-          </a>
-         </div>
+           <p class="text">{myData.titel}</p>
+           </div>
+           </a>
           </li>
         ))
     }
@@ -55,12 +55,12 @@ const data = await fetch(
         .filter((myData) => myData.event === "Extralight")
         .map((myData) => (
           <li>
-  <div class="container">
+  <a href={"/artworks/" + myData.slug}>
+           <div class="container">
            <img src={myData.img} alt="" class="image" />
-           <a class="text" href={"/artworks/" + myData.slug}>
-          {myData.titel}
-          </a>
-         </div>
+           <p class="text">{myData.titel}</p>
+           </div>
+           </a>
           </li>
         ))
     }
