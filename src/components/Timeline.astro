@@ -9,9 +9,17 @@ const data = await fetch(
     },
   }
 ).then((res) => res.json());
----
 
-<section class="timeline">
+import Button from "../components/Button.astro";
+---
+<section class="button-container">
+<Button>VÆRKER</Button>
+<Button>POP-UP</Button>
+<Button>EXTRA</Button>
+</section>
+
+
+<div class="timeline">
    <ul>
     <li>
       <h3>VÆRKER</h3>
@@ -22,7 +30,7 @@ const data = await fetch(
         .map((myData) => (
           <li>
            <a href={"/artworks/" + myData.slug}>
-           <div class="container"  id="vaerker">
+           <div class="container">
            <img src={myData.img} alt="" class="image" />
            <p class="text">{myData.titel}</p>
            </div>
@@ -39,7 +47,7 @@ const data = await fetch(
         .map((myData) => (
           <li>
             <a href={"/artworks/" + myData.slug}>
-           <div class="container"  id="popup">
+           <div class="container">
            <img src={myData.img} alt="" class="image" />
            <p class="text">{myData.titel}</p>
            </div>
@@ -47,8 +55,8 @@ const data = await fetch(
           </li>
         ))
     }
-    <li>
-      <h3>EXTRA LIGHT EXPERIENCES</h3>
+    <li >
+      <h3>EXTRA</h3>
     </li>
     {
       data
@@ -56,7 +64,7 @@ const data = await fetch(
         .map((myData) => (
           <li>
   <a href={"/artworks/" + myData.slug}>
-           <div class="container"  id="extralight">
+           <div class="container">
            <img src={myData.img} alt="" class="image" />
            <p class="text">{myData.titel}</p>
            </div>
@@ -65,7 +73,7 @@ const data = await fetch(
         ))
     }
   </ul>
-</section>
+</div>
 
 <style>
   h3 {
@@ -117,6 +125,15 @@ display: block;
   opacity: 1;
   box-shadow: var(--shadow-hover);
 }
+
+.timeline ul li:nth-child(odd) div {
+  left: 45px; /* Adjust this value as needed for layout */
+}
+
+.timeline ul li:nth-child(even) div {
+  left: -439px; /* Adjust this value as needed for layout */
+}
+
 
   /* TIMELINE
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
@@ -325,33 +342,54 @@ display: block;
       transform: translateX(-50%) scale(1);
     }
   }
+
+  /* Button
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+    .button-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 150px;
+  }
+
+  @media screen and (min-width: 769px) {
+    .button-container {
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+    }
+  }
 </style>
 
 <script>
-  (function () {
-    "use strict";
 
-    // define variables
-    var items = document.querySelectorAll(".timeline li");
 
-    // check if an element is in viewport
-    // http://stackoverflow.com/questions/123999/how-to-tell-if-a-dom-element-is-visible-in-the-current-viewport
-    function isElementInViewport(el) {
-      var rect = el.getBoundingClientRect();
-      return rect.top >= 0 && rect.left >= 0 && rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) && rect.right <= (window.innerWidth || document.documentElement.clientWidth);
-    }
 
-    function callbackFunc() {
-      for (var i = 0; i < items.length; i++) {
-        if (isElementInViewport(items[i])) {
-          items[i].classList.add("in-view");
+      /* Timeline
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+    (function () {
+      "use strict";
+
+      // define variables
+      var items = document.querySelectorAll(".timeline li");
+
+      // check if an element is in viewport
+      function isElementInViewport(el) {
+        var rect = el.getBoundingClientRect();
+        return rect.top >= 0 && rect.left >= 0 && rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) && rect.right <= (window.innerWidth || document.documentElement.clientWidth);
+      }
+
+      function callbackFunc() {
+        for (var i = 0; i < items.length; i++) {
+          if (isElementInViewport(items[i])) {
+            items[i].classList.add("in-view");
+          }
         }
       }
-    }
 
-    // listen for events
-    window.addEventListener("load", callbackFunc);
-    window.addEventListener("resize", callbackFunc);
-    window.addEventListener("scroll", callbackFunc);
-  })();
+      // listen for events
+      window.addEventListener("load", callbackFunc);
+      window.addEventListener("resize", callbackFunc);
+      window.addEventListener("scroll", callbackFunc);
+    })();
 </script>

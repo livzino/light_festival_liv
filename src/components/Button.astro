@@ -2,14 +2,12 @@
 
 ---
 
-<section style="margin-top: 150px;">
-  <a>
-    <slot />
-  </a>
-</section>
+<a class="custom-button">
+  <slot />
+</a>
 
 <style>
-  a {
+  a.custom-button {
     background-color: var(--button);
     padding: var(--padding-button);
     border-radius: var(--border-radius-round);
@@ -21,14 +19,9 @@
     border: none;
     display: block;
     margin: 0 auto;
+    margin-top: 30px;
   }
-
-  a:hover {
+  a.custom-button:hover {
     box-shadow: var(--shadow-hover);
-  }
-
-  section {
-    display: flex;
-    flex-direction: column;
   }
 </style>
