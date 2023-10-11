@@ -9,7 +9,17 @@ const data = await fetch(
     },
   }
 ).then((res) => res.json());
+import Button from "./Button.astro";
 ---
+<!-- <Button>
+  VÆRKER
+</Button>
+<Button>
+  POPUP
+</Button>
+<Button>
+  EXTRA
+</Button> -->
 
 <section class="timeline">
   <ul>
@@ -76,11 +86,6 @@ const data = await fetch(
 .container {
   position: relative;
   width: 100%;
-}
-
-.container {
-  position: relative;
-  width: 100%;
   display: inline-block;
 }
 
@@ -93,7 +98,7 @@ display: block;
 .text {
   position: absolute;
   top: 50%;
-  left: 50%;
+  left: 54%;
   transform: translate(-50%, -50%);
   background-color: var(--button);
   color: var(--text-beige);
@@ -137,6 +142,9 @@ display: block;
     overflow-x: hidden;
     padding-bottom: 50px;
   }
+
+  .timeline {
+  margin-bottom: 80px;}
 
   .timeline ul {
     padding: 50px 0;
@@ -260,11 +268,31 @@ display: block;
     .timeline ul li:nth-child(even) div {
       left: 45px;
     }
-    .timeline ul li:nth-child(even) div::before {
-      left: -15px;
-      border-width: 8px 16px 8px 0;
-      border-color: transparent var(--button) transparent transparent;
-    }
+   .timeline ul li div::before {
+    display: none;
+  }
+
+      .image {
+    width: 300px;
+    height: 200px;
+  }
+
+  .text {
+    display: block;
+     top: 50%;
+  left: 46%;
+  transform: translate(-50%, -50%);
+  }
+
+  .container:hover .image {
+    filter: none;
+  }
+
+  .container:hover .text {
+  display: block;
+  box-shadow: var(--shadow-default);
+  }
+
   }
 
   /* EXTRA/CLIP PATH STYLES
