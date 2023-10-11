@@ -1,13 +1,15 @@
 ---
-import "../global_css/style.css";
+
 ---
 
-<button>
-  <slot />
-</button>
+<section style="margin-top: 150px;">
+  <a>
+    <slot />
+  </a>
+</section>
 
 <style>
-  button {
+  a {
     background-color: var(--button);
     padding: var(--padding-button);
     border-radius: var(--border-radius-round);
@@ -17,10 +19,16 @@ import "../global_css/style.css";
     text-decoration: none;
     box-shadow: var(--shadow-default);
     border: none;
-    margin-right: 100px;
+    display: block;
+    margin: 0 auto;
   }
 
-  button:hover {
+  a:hover {
     box-shadow: var(--shadow-hover);
+  }
+
+  section {
+    display: flex;
+    flex-direction: column;
   }
 </style>
