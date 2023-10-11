@@ -13,19 +13,21 @@ const data = await fetch(
 import Button from "../components/Button.astro";
 ---
 <section class="button-container">
-<Button>
-    VÆRKER
-</Button>
-<Button>POP-UP</Button>
-<Button>EXTRA</Button>
+
+    <a href="#id1">VÆRKER</a>
+    <a href="#id2">POP-UP</a>
+    <a href="#id3">EXTRA</a>
+
 </section>
 
 
 <div class="timeline">
    <ul>
+    <section id="id1">
     <li>
       <h3>VÆRKER</h3>
     </li>
+    </section>
     {
       data
         .filter((myData) => myData.event === "Værker")
@@ -40,9 +42,11 @@ import Button from "../components/Button.astro";
           </li>
         ))
     }
+    <section id="id2">
     <li>
       <h3>POP-UP EVENTS</h3>
     </li>
+    </section>
     {
       data
         .filter((myData) => myData.event === "Popup")
@@ -57,9 +61,11 @@ import Button from "../components/Button.astro";
           </li>
         ))
     }
+    <section id="id3">
     <li >
       <h3>EXTRA</h3>
     </li>
+    </section>
     {
       data
         .filter((myData) => myData.event === "Extralight")
@@ -347,7 +353,24 @@ display: block;
 
   /* Button
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
-    .button-container {
+ .button-container a{
+    background-color: var(--button);
+    padding: var(--padding-button);
+    border-radius: var(--border-radius-round);
+    font-family: var(--font-chicle);
+    font-size: var(--font-size-button);
+    color: var(--text-beige);
+    text-decoration: none;
+    box-shadow: var(--shadow-default);
+    border: none;
+    display: block;
+    margin: 0 auto;
+    margin-top: 30px;
+  }
+  .button-container a:hover {
+    box-shadow: var(--shadow-hover);
+  }
+.button-container {
     display: flex;
     flex-direction: column;
     margin-top: 150px;
@@ -360,6 +383,8 @@ display: block;
       align-items: center;
     }
   }
+
+
 </style>
 
 <script>
