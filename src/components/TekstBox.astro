@@ -1,16 +1,52 @@
 <div class="wrapper">
-  <div class="fold-out-box">
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste similique dolorem non nihil quam eveniet, assumenda quidem consequuntur, maiores dolores dolore animi fugiat quos! Accusamus nihil eligendi animi sed repellat? Laudantium tempore nisi saepe a nesciunt distinctio consequatur iste dignissimos amet. Veniam tenetur qui delectus consectetur, voluptatibus illum nulla quae tempore neque quisquam porro saepe atque, dolor sed pariatur molestiae. Quae sed quisquam, optio, animi fugit dolores, consequatur cupiditate dicta obcaecati aut voluptas provident eligendi? Nihil, error earum tempore quas sint dolore, maxime quidem quibusdam ad voluptate debitis, rem quae?</p>
+  <div>
+    <div class="fold-out-box">
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste similique dolorem non nihil quam eveniet, assumenda quidem consequuntur, maiores dolores dolore animi fugiat quos! Accusamus nihil eligendi animi sed repellat? Laudantium tempore nisi saepe a nesciunt distinctio consequatur iste dignissimos amet. Veniam tenetur qui delectus consectetur, voluptatibus illum nulla quae tempore neque quisquam porro saepe atque, dolor sed pariatur molestiae. Quae sed quisquam, optio, animi fugit dolores, consequatur cupiditate dicta obcaecati aut voluptas provident eligendi? Nihil, error earum tempore quas sint dolore, maxime quidem quibusdam ad voluptate debitis, rem quae?</p>
+    </div>
     <button class="read-more-button">Read More</button>
   </div>
-
   <div class="fold-out-box">
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti qui sint consequuntur sequi perferendis laborum temporibus cum! Ad cum odit quaerat optio enim modi labore, tempora earum dolores. Ut, accusantium. Harum nisi quam, asperiores obcaecati aperiam a culpa beatae excepturi nostrum. Ipsam laboriosam vel ducimus maiores alias corrupti necessitatibus, impedit ex voluptatibus amet inventore reiciendis nobis nemo quisquam cupiditate ratione. Praesentium at dicta totam tempore amet. Animi distinctio deleniti maiores quaerat hic provident commodi, sed labore exercitationem saepe perferendis veniam facere in repudiandae eum nam deserunt pariatur. Quas, possimus necessitatibus!</p>
-    <button class="read-more-button">Read More</button>
+  </div><button class="read-more-button">Read More</button>
+</div>
+
+<div class="card">
+  <input id="ch" type="checkbox" />
+  <h4>What is Copenhagen light Festival?</h4>
+  <p>Copenhagen Light Festival is an annual light festival that transforms the quiet and cold winter darkness into a unique celebration of light art, lighting design and illumination in the center of Copenhagen. In three weeks of February the festival presents a wide range of light based works – such as sculpture, installation, projection mapping, event and illumination created by both established and upcoming light artists, lighting designers, students and organizations.</p>
+  <div class="content">
+    <p>Copenhagen Light Festival is an annual light festival that transforms the quiet and cold winter darkness into a unique celebration of light art, lighting design and illumination in the center of Copenhagen. In three weeks of February the festival presents a wide range of light based works – such as sculpture, installation, projection mapping, event and illumination created by both established and upcoming light artists, lighting designers, students and organizations.</p>
+    <label for="ch">Show less</label>
   </div>
+  <label for="ch">Read more</label>
 </div>
 
 <style>
+  .card {
+    background: linear-gradient(to bottom, #fee1bb, rgba(37, 38, 39, 0));
+    color: #010854;
+  }
+
+  #ch {
+    display: none;
+  }
+  #ch:checked ~ .content {
+    display: block;
+  }
+
+  #ch:checked ~ label {
+    display: none;
+  }
+
+  .content {
+    display: none;
+  }
+  label {
+    display: inline-block;
+    cursor: pointer;
+    color: #ff0092;
+  }
+
   .fold-out-box {
     display: flex;
     flex-direction: column; /* Stack children vertically */
