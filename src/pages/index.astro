@@ -57,46 +57,61 @@ import ImgButton from "../components/ImgButton.astro";
         </div>
       </div>
       <h5>Partner</h5>
+      <div class="gridimg">
+        <img src="img/logo1.png" alt="logo1" class="glypto" />
+        <img src="img/logo2.png" alt="logo2" class="nordbro" />
+        <img src="img/logo3.png" alt="logo3" class="ano" />
+        <img src="img/logo4.png" alt="logo4" class="kbh" />
+      </div>
     </main>
-  </body>
 
-  <style>
-    .gridbutton {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      margin-left: 130px;
-      margin-top: 100px;
-    }
-    hr {
-      width: 1250px;
-      margin: 100px;
-    }
-    .gridabout {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-    }
-    .paddingboks {
-      background-color: var(--text-beige);
-      padding: 30px;
-      margin: 80px;
-      border-radius: 30px;
-      margin-top: 20px;
-    }
-    h4 {
-      text-align: center;
-      font-size: var(--font-size-banner);
-    }
-    .pnavy {
-      color: var(--text-navy);
-    }
-    h5 {
-      text-align: center;
-      font-size: var(--font-size-banner);
-      margin-bottom: 100px;
-      margin-top: 20px;
-    }
-    /* var(--text-navy) 
+    <style>
+      .gridbutton {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        margin-left: 130px;
+        margin-top: 100px;
+      }
+      hr {
+        width: 1250px;
+        margin: 100px;
+      }
+      .gridabout {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+      }
+      .paddingboks {
+        background-color: var(--text-beige);
+        padding: 30px;
+        margin: 80px;
+        border-radius: 30px;
+        margin-top: 20px;
+      }
+      h4 {
+        text-align: center;
+        font-size: var(--font-size-banner);
+      }
+      .pnavy {
+        color: var(--text-navy);
+      }
+      h5 {
+        text-align: center;
+        font-size: var(--font-size-banner);
+        margin-bottom: 100px;
+        margin-top: 20px;
+      }
+      .gridimg {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+      }
+      .nordbro {
+        width: 300px;
+        height: auto;
+      }
+
+      /* var(--text-navy) 
     var(--text-beige)
     */
-  </style>
+    </style>
+  </body>
 </html>
