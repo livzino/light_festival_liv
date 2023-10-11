@@ -1,18 +1,26 @@
-<div class="card" id="card">
-  <input id="ch" type="checkbox" />
-  <h4>What is Copenhagen light Festival?</h4>
-  <p>Copenhagen Light Festival is an annual light festival that transforms the quiet and cold winter darkness into a unique celebration of light art, lighting design and illumination in the center of Copenhagen. In three weeks of February the festival presents a wide range of light based works – such as sculpture, installation, projection mapping, event and illumination created by both established and upcoming light artists, lighting designers, students and organizations.</p>
-  <div class="content">
-    <p>Copenhagen Light Festival is an annual light festival that transforms the quiet and cold winter darkness into a unique celebration of light art, lighting design and illumination in the center of Copenhagen. In three weeks of February the festival presents a wide range of light based works – such as sculpture, installation, projection mapping, event and illumination created by both established and upcoming light artists, lighting designers, students and organizations.</p>
-    <label for="ch" class="show-less-label">Show less</label>
+<article>
+  <slot name="h3" slot="h3" />
+  <div class="card paddingboks" id="card">
+    <input id="ch" type="checkbox" />
+    <slot name="p1" slot="p1" />
+    <div class="content">
+      <slot name="p2" slot="p2" />
+      <label for="ch" class="show-less-label">Show less</label>
+    </div>
+    <label for="ch" class="read-more-label">Read more</label>
   </div>
-  <label for="ch" class="read-more-label">Read more</label>
-</div>
-
+</article>
 <style>
   .card {
     background: linear-gradient(to bottom, #fee1bb, rgba(37, 38, 39, 0));
     color: #010854;
+  }
+
+  .paddingboks {
+    padding: 30px;
+    margin: 80px;
+    border-radius: 30px;
+    margin-top: 20px;
   }
 
   #ch {
@@ -37,6 +45,8 @@
     display: inline-block;
     cursor: pointer;
     color: #ff0092;
+    font-family: var(--font-jua);
+    text-decoration: underline;
   }
 </style>
 

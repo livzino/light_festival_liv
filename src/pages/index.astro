@@ -45,19 +45,21 @@ import Tekstbox from "../components/TekstBox.astro";
       <hr />
       <div class="gridabout">
         <div>
-          <h4>What is Copenhagen light Festival?</h4>
-          <div class="paddingboks">
-            <p class="pnavy">Copenhagen Light Festival is an annual light festival that transforms the quiet and cold winter darkness into a unique celebration of light art, lighting design and illumination in the center of Copenhagen. In three weeks of February the festival presents a wide range of light based works – such as sculpture, installation, projection mapping, event and illumination created by both established and upcoming light artists, lighting designers, students and organizations.</p>
-          </div>
+          <Tekstbox>
+            <h3 slot="h3">What is copenhagen light bla bla</h3>
+            <p slot="p1">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illum, reiciendis? Consequuntur, ratione? Earum ab dignissimos voluptas quis neque doloribus excepturi, deleniti harum doloremque magni voluptatem eveniet magnam! Distinctio, hic corporis?</p>
+            <p slot="p2">HEJ MED DIGIIIIIIIIIIIIIIIIIIIG</p>
+          </Tekstbox>
         </div>
         <div>
-          <h4>Substainbility</h4>
-          <div class="paddingboks">
-            <p class="pnavy">Copenhagen Light Festival is an annual light festival that transforms the quiet and cold winter darkness into a unique celebration of light art, lighting design and illumination in the center of Copenhagen. In three weeks of February the festival presents a wide range of light based works – such as sculpture, installation, projection mapping, event and illumination created by both established and upcoming light artists, lighting designers, students and organizations.</p>
-          </div>
+          <Tekstbox>
+            <h3 slot="h3">What is copenhagen light bla bla</h3>
+            <p slot="p1">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illum, reiciendis? Consequuntur, ratione? Earum ab dignissimos voluptas quis neque doloribus excepturi, deleniti harum doloremque magni voluptatem eveniet magnam! Distinctio, hic corporis?</p>
+            <p slot="p2">HEJ MED DIGIIIIIIIIIIIIIIIIIIIG</p>
+          </Tekstbox>
         </div>
       </div>
-      <Tekstbox />
+
       <h5>Partner</h5>
       <div class="gridimg">
         <img src="img/logo1.png" alt="logo1" class="glypto" />
@@ -82,20 +84,12 @@ import Tekstbox from "../components/TekstBox.astro";
         display: grid;
         grid-template-columns: 1fr 1fr;
       }
-      .paddingboks {
-        background-color: var(--text-beige);
-        padding: 30px;
-        margin: 80px;
-        border-radius: 30px;
-        margin-top: 20px;
-      }
-      h4 {
+
+      h3 {
         text-align: center;
         font-size: var(--font-size-banner);
       }
-      .pnavy {
-        color: var(--text-navy);
-      }
+
       h5 {
         text-align: center;
         font-size: var(--font-size-banner);
