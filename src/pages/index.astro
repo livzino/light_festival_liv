@@ -31,15 +31,24 @@ import ImgButton from "../components/ImgButton.astro";
   <Nav />
   <body>
     <main>
-      <h1>Forside</h1>
       <a href=""></a>
+      <video width="100%" height="auto" autoplay muted>
+        <source src="./public/copenhagen.mp4" type="video/mp4" />
+      </video>
       <Banner />
       <div class="gridbutton">
         <div class="firstbutton">
-          <ImgButton />
+          <ImgButton img="https://copenhagenlightfestival.org/wp-content/uploads/2023/02/MANDALEG.jpeg" />
+          <div class="centered"><a href="/liste/">2024</a></div>
         </div>
-        <ImgButton />
-        <ImgButton />
+        <div class="firstbutton">
+          <ImgButton img="https://copenhagenlightfestival.org/wp-content/uploads/2023/02/image00001.jpeg" />
+          <div class="centered">FAQ</div>
+        </div>
+        <div class="firstbutton">
+          <ImgButton img="https://copenhagenlightfestival.org/wp-content/uploads/2023/02/Our-Beating-Heart.jpg" />
+          <div class="centered">PERMANENT</div>
+        </div>
       </div>
       <hr />
       <div class="gridabout">
@@ -105,6 +114,22 @@ import ImgButton from "../components/ImgButton.astro";
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
         margin-left: 100px;
+      }
+      .centered {
+        position: absolute;
+        top: 50%;
+        left: 35%;
+        transform: translate(-50%, -50%);
+        z-index: 100;
+        font-family: "chicle";
+        font-weight: normal;
+        font-size: 350%;
+        color: var(--text-beige);
+      }
+      .firstbutton {
+        position: relative;
+        text-align: center;
+        color: white;
       }
       .glypto {
         width: 250px;

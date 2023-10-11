@@ -1,9 +1,10 @@
 ---
 import "../global_css/style.css";
+const { img } = Astro.props;
 ---
 
 <a href="#">
-  <img src="img/sneugle.jpg" />
+  <img src={img} alt="" height="350" width="350" />
 </a>
 
 <style>
@@ -13,6 +14,8 @@ import "../global_css/style.css";
     border-radius: 50%;
     border: var(--border-img);
     box-shadow: var(--shadow-default);
+
+    display: block;
   }
 
   img:hover {
