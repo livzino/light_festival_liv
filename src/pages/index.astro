@@ -43,6 +43,7 @@ import Scroll from "../components/Scroll.astro";
           <ImgButton img="https://copenhagenlightfestival.org/wp-content/uploads/2023/02/MANDALEG.jpeg" />
           <div class="centered"><a href="/liste/">2024</a></div>
         </div>
+
         <div class="firstbutton">
           <ImgButton img="https://copenhagenlightfestival.org/wp-content/uploads/2023/02/image00001.jpeg" />
           <div class="centered">FAQ</div>
@@ -67,7 +68,9 @@ import Scroll from "../components/Scroll.astro";
           </div>
         </div>
       </div>
+
       <h5>Fonde</h5>
+
       <div class="gridimg">
         <img src="img/logo1.png" alt="logo1" class="glypto" />
         <img src="img/logo2.png" alt="logo2" class="nordbro" />
@@ -75,6 +78,7 @@ import Scroll from "../components/Scroll.astro";
         <img src="img/logo4.png" alt="logo4" class="kbh" />
         <Scroll />
       </div>
+      <Footer />
     </main>
 
     <style>
@@ -133,6 +137,10 @@ import Scroll from "../components/Scroll.astro";
         position: relative;
         text-align: center;
         color: white;
+        margin-bottom: 70px;
+      }
+      h5 {
+        font-size: 300%;
       }
       .glypto {
         width: 250px;
@@ -154,6 +162,88 @@ import Scroll from "../components/Scroll.astro";
       /* var(--text-navy)
     var(--text-beige)
     */
+      @media screen and (max-width: 768px) {
+        .gridbutton {
+          display: grid;
+          grid-template-columns: 1fr;
+          margin-left: 100px;
+          margin-top: 100px;
+        }
+        hr {
+          width: 400px;
+          margin: 50px;
+        }
+        .gridabout {
+          display: grid;
+          grid-template-columns: 1fr;
+        }
+        .paddingboks {
+          background-color: var(--text-beige);
+          padding: 30px;
+          margin: 80px;
+          border-radius: 30px;
+          margin-top: 20px;
+        }
+        h4 {
+          text-align: center;
+          font-size: var(--font-size-banner);
+        }
+        .pnavy {
+          color: var(--text-navy);
+        }
+        h5 {
+          text-align: center;
+          font-size: var(--font-size-button);
+
+          margin-top: 80px;
+          margin-bottom: 30px;
+        }
+        .gridimg {
+          display: grid;
+          grid-template-columns: 1fr;
+          margin-left: 100px;
+        }
+        .centered {
+          position: absolute;
+          top: 50%;
+          left: 35%;
+          transform: translate(-50%, -50%);
+          z-index: 100;
+          font-family: "chicle";
+          font-weight: normal;
+          font-size: 350%;
+          color: var(--text-beige);
+        }
+        .firstbutton {
+          position: relative;
+          text-align: center;
+          color: white;
+        }
+        h5 {
+          font-size: 300%;
+        }
+        .glypto {
+          width: 250px;
+          height: auto;
+          margin-left: 40px;
+        }
+        .nordbro {
+          width: 250px;
+          height: auto;
+          margin-left: 40px;
+        }
+        .ano {
+          width: 250px;
+          height: auto;
+          margin-left: 40px;
+        }
+        .kbh {
+          width: 200px;
+          height: auto;
+          margin-bottom: 100px;
+          margin-left: 60px;
+        }
+      }
     </style>
   </body>
 </html>
