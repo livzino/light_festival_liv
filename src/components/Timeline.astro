@@ -21,9 +21,12 @@ const data = await fetch(
         .filter((myData) => myData.event === "Værker")
         .map((myData) => (
           <li>
-            <div>
-              <img src={myData.img} alt={myData.titel} />
-            </div>
+            <div class="container">
+           <img src={myData.img} alt="" class="image" />
+           <a class="text" href={"/artworks/" + myData.slug}>
+          {myData.titel}
+          </a>
+         </div>
           </li>
         ))
     }
@@ -35,9 +38,12 @@ const data = await fetch(
         .filter((myData) => myData.event === "Popup")
         .map((myData) => (
           <li>
-            <div>
-              <img src={myData.img} alt="" />
-            </div>
+              <div class="container">
+           <img src={myData.img} alt="" class="image" />
+           <a class="text" href={"/artworks/" + myData.slug}>
+          {myData.titel}
+          </a>
+         </div>
           </li>
         ))
     }
@@ -49,9 +55,12 @@ const data = await fetch(
         .filter((myData) => myData.event === "Extralight")
         .map((myData) => (
           <li>
-            <div>
-              <img src={myData.img} alt="" />
-            </div>
+  <div class="container">
+           <img src={myData.img} alt="" class="image" />
+           <a class="text" href={"/artworks/" + myData.slug}>
+          {myData.titel}
+          </a>
+         </div>
           </li>
         ))
     }
@@ -64,10 +73,55 @@ const data = await fetch(
     margin-left: 32px;
   }
 
-  img {
-    width: 400px;
-    height: 300px;
-  }
+.container {
+  position: relative;
+  width: 100%;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  display: inline-block;
+}
+
+.image {
+width: 400px;
+height: 300px;
+display: block;
+}
+
+.text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--button);
+  color: var(--text-beige);
+  font-family: var(--font-chicle);
+  font-size: var(--font-size-button);
+  text-decoration: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: center;
+  padding: var(--padding-button);
+  border-radius: var(--border-radius-round);
+  box-shadow: var(--shadow-default);
+  display: none;
+  transition: opacity 0.3s ease-in-out;
+  width: 70%;
+}
+
+
+.container:hover .image {
+  filter: brightness(30%);
+}
+
+.container:hover .text {
+  display: inline-block;
+  opacity: 1;
+  box-shadow: var(--shadow-hover);
+}
 
   /* TIMELINE
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
@@ -193,8 +247,7 @@ const data = await fetch(
     }
     .timeline ul li:nth-child(even) div {
       left: -289px;
-      /*250+45-6*/
-    }
+´    }
   }
 
   @media screen and (max-width: 600px) {
