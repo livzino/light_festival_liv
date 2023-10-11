@@ -1,0 +1,287 @@
+<button class="btn">Pssst...</button>
+
+<div class="pop-up">
+  <div class="content">
+    <div class="container">
+      <div class="dots">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+      </div>
+
+      <span class="closebtn"><i class="fas fa-times"></i></span>
+
+      <div class="title">
+        <h1>* Velkommen *</h1>
+      </div>
+
+      <div class="subscribe">
+        <pre>Oplev magien i lyskunst! Vores festival byder på:
+
+* Lysskulpturer
+* Interaktive installationer
+* Magisk oplevelse 
+
+Del dine oplevelser med os på sociale medier 
+med hashtaggen #CopenhagenLightFestival.
+
+Vi glæder os til at byde dig velkommen 
+til en magisk lysoplevelse!
+
+</pre>
+        <form>
+          <input type="email" placeholder="Your E-mail Address" />
+          <input type="submit" value="Subscribe" />
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  *,
+  *::before,
+  *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    background-color: #3e4146;
+  }
+
+  pre {
+    font-family: var(--font-arial);
+    white-space: pre;
+    color: var(--text-navy);
+  }
+
+  button {
+    position: absolute;
+    top: 170%;
+    left: -10%;
+    transform: translate(-50%, -50%);
+    background-color: var(--border);
+    color: var(--line-banner);
+    border: 0;
+    padding: 15px 25px;
+    text-transform: uppercase;
+    font-size: 22px;
+    letter-spacing: 1px;
+    width: 140px;
+    overflow: hidden;
+    visibility: visible;
+    opacity: 1;
+    font-weight: bold;
+    box-shadow: 0px 6px 30px rgba(0, 0, 0, 0.6);
+    cursor: pointer;
+    transition: all 0.4s;
+    border-radius: 3px;
+    transform: rotate(90deg);
+  }
+
+  button:hover {
+    background-color: var(--line-banner);
+    color: var(--border);
+  }
+
+  .pop-up {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 50%;
+    top: 170%;
+    transform: translate(-50%, -50%) scale(0.9);
+    overflow-y: auto;
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.4);
+    visibility: hidden;
+    opacity: 0;
+    z-index: 10;
+    background-color: var(--line-banner);
+    transition: all 0.3s;
+  }
+
+  .pop-up .content {
+    width: 100%;
+    max-width: 900px;
+    overflow: hidden;
+    text-align: center;
+    position: relative;
+    min-height: 100vh;
+  }
+
+  .pop-up .content .container {
+    padding: 100px 20px 140px;
+  }
+
+  .pop-up .content .closebtn {
+    position: absolute;
+    left: -18px;
+    top: -18px;
+    color: #000000;
+    cursor: pointer;
+    padding: 20px 25px;
+    border-radius: 50%;
+    font-size: 30px;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .pop-up .content .closebtn:hover {
+    border-radius: 30px;
+  }
+
+  .pop-up .content .dots .dot {
+    position: absolute;
+    border-radius: 100%;
+    z-index: 11;
+  }
+
+  .pop-up .content .title h1 {
+    text-align: center;
+    font-family: var(--font-chicle);
+    color: var(--text-navy);
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 45px;
+    letter-spacing: 3px;
+  }
+
+  .pop-up .content .subscribe h1 {
+    font-size: 24px;
+    line-height: 130%;
+    letter-spacing: 1.12px;
+    margin-bottom: 30px;
+  }
+
+  .pop-up .content .subscribe h1 span {
+    color: var(--text-navy);
+  }
+
+  .pop-up .content .subscribe form {
+    overflow: hidden;
+  }
+
+  .pop-up .content .subscribe form input {
+    width: 100%;
+    float: left;
+    padding: 15px 20px;
+    text-align: center;
+    font-size: 18px;
+    letter-spacing: 0.8px;
+    outline: 0;
+  }
+
+  .pop-up .content .subscribe form input[type="email"] {
+    margin-bottom: 15px;
+    border: 1px solid #bec1c5;
+    border-radius: 20px;
+    transition: all 0.4s;
+  }
+
+  .pop-up .content .subscribe form input[type="email"]:focus {
+    border-color: #3e4146;
+  }
+
+  .pop-up .content .subscribe form input[type="submit"] {
+    background-color: var(--link);
+    color: #fff;
+    border: 1px solid var(--link);
+    border-radius: 20px;
+    transition: all 0.4s;
+    cursor: pointer;
+  }
+
+  .pop-up .content .subscribe form input[type="submit"]:hover {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .pop-up.open {
+    visibility: visible;
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  .pop-up.open img {
+    opacity: 1;
+    transition: 1s;
+    transition-delay: 0.3s;
+    transform: translateX(0px);
+  }
+
+  /* ---------------------------------------------- */
+  /* MEDIA QUERIES */
+  /* ---------------------------------------------- */
+
+  @media only screen and (min-width: 768px) {
+    .pop-up {
+      width: calc(100% - 40px);
+      height: auto;
+      max-width: 624px;
+      width: 105%;
+    }
+
+    button {
+      position: absolute;
+      top: 176%;
+      left: -3%;
+      transform: translate(-50%, -50%);
+      background-color: var(--border);
+      color: var(--line-banner);
+      border: 0;
+      padding: 15px 25px;
+      text-transform: uppercase;
+      font-size: 22px;
+      letter-spacing: 1px;
+      width: 140px;
+      overflow: hidden;
+      visibility: visible;
+      opacity: 1;
+      font-weight: bold;
+      box-shadow: 0px 6px 30px rgba(0, 0, 0, 0.6);
+      cursor: pointer;
+      transition: all 0.4s;
+      border-radius: 3px;
+      transform: rotate(90deg);
+    }
+
+    .pop-up .content {
+      min-height: inherit;
+    }
+
+    .pop-up .content .container {
+      padding: 42px 0px 42px;
+      max-width: 520px;
+      margin: 0 auto;
+    }
+
+    .pop-up .content .dots .dot:nth-of-type(1) {
+      top: 190px;
+      right: -190px;
+      width: 380px;
+      height: 380px;
+    }
+
+    .pop-up .content .subscribe form input[type="email"] {
+      margin-bottom: 0px;
+      width: 65%;
+      border-right-width: 0px;
+    }
+
+    .pop-up .content .subscribe form input[type="submit"] {
+      width: 25%;
+      margin-left: 9px;
+    }
+  }
+</style>
+
+<script>
+  document.querySelector(".btn").addEventListener("click", function () {
+    document.querySelector(".pop-up").classList.add("open");
+  });
+
+  document.querySelector(".pop-up .closebtn").addEventListener("click", function () {
+    document.querySelector(".pop-up").classList.remove("open");
+  });
+</script>
