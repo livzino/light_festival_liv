@@ -12,21 +12,20 @@
       <span class="closebtn"><i class="fas fa-times"></i></span>
 
       <div class="title">
-        <h1>* Velkommen *</h1>
+        <h1>* Welcome *</h1>
       </div>
 
       <div class="subscribe">
-        <pre>Oplev magien i lyskunst! Vores festival byder på:
+        <pre>Experience the magic of light art! Our festival offers:
+* Light sculptures
+* Interactive installations
+* Magical experience
 
-* Lysskulpturer
-* Interaktive installationer
-* Magisk oplevelse 
+Share your experiences with us on social media
+with the hashtag #CopenhagenLightFestival.
 
-Del dine oplevelser med os på sociale medier 
-med hashtaggen #CopenhagenLightFestival.
-
-Vi glæder os til at byde dig velkommen 
-til en magisk lysoplevelse!
+We are looking forward to welcome you
+for a magical lighting experience!
 
 </pre>
         <form>
@@ -119,7 +118,7 @@ til en magisk lysoplevelse!
     position: absolute;
     left: -18px;
     top: -18px;
-    color: #000000;
+    color: var(--button);
     cursor: pointer;
     padding: 20px 25px;
     border-radius: 50%;
@@ -174,19 +173,20 @@ til en magisk lysoplevelse!
 
   .pop-up .content .subscribe form input[type="email"] {
     margin-bottom: 15px;
-    border: 1px solid #bec1c5;
+    border: 2px solid var(--button);
     border-radius: 20px;
     transition: all 0.4s;
   }
 
   .pop-up .content .subscribe form input[type="email"]:focus {
-    border-color: #3e4146;
+    border-color: var(--button);
   }
 
   .pop-up .content .subscribe form input[type="submit"] {
-    background-color: var(--link);
-    color: #fff;
-    border: 1px solid var(--link);
+    background-color: var(--button);
+    color: var(--text-beige);
+    font-family: var(--font-chicle);
+    border: none;
     border-radius: 20px;
     transition: all 0.4s;
     cursor: pointer;
