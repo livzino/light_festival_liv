@@ -14,7 +14,7 @@
   .card {
     background: linear-gradient(to bottom, #fee1bb, rgba(37, 38, 39, 0));
     color: #010854;
-    padding: 30px;
+    padding: 30px 30px 10px 30px;
     margin: 80px;
     border-radius: 30px;
     margin-top: 20px;
@@ -38,12 +38,41 @@
   .content {
     display: none;
   }
+
+  .show-less-label {
+    width: 100%;
+    text-align: center;
+    padding-top: 10px;
+  }
+
+  .read-more-label {
+    width: 100%;
+    text-align: center;
+    padding-top: 10px;
+  }
   label {
     display: inline-block;
     cursor: pointer;
     color: #ff0092;
     font-family: var(--font-jua);
     text-decoration: underline;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+  }
+
+  .readmoreani {
+    animation-name: readmoreani_kf;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+  }
+
+  @keyframes readmoreani_kf {
+    from {
+      translate: 0 100%;
+    }
   }
 </style>
 
